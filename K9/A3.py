@@ -6,4 +6,3 @@ def counter():
 
 
 counter()
-print("a")
