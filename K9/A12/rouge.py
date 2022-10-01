@@ -41,7 +41,9 @@ class Rouge:
                 self.sneakattack()
                 return 0
             if (choise == "2"):
-                return self.daggerattack()+self.nextattack()
+                temp = self.nextattack
+                self.nextattack = 0
+                return self.daggerattack()+temp
             if (choise == "3"):
                 self.dust()
                 return 0
