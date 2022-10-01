@@ -39,10 +39,9 @@ class Rouge:
                 "Which Attack? (1=SneakAttack, 2=DaggerAttack, 3=Dust, 4=HealthPotion): ")
             if (choise == "1"):
                 self.sneakattack()
-                print("Zuerst angriff noch hinzufügen!!!!!!!")
                 return 0
             if (choise == "2"):
-                return self.daggerattack()
+                return self.daggerattack()+self.nextattack()
             if (choise == "3"):
                 self.dust()
                 return 0

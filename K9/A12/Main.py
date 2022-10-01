@@ -31,6 +31,7 @@ while (finish() == False):
     print("PlayerTwo:")
     playerTwo.player.printData()
     print()
+
     if (play):
         print("PlayerOne Attack:")
         playerTwo.player.getDamage(playerOne.player.attack())
