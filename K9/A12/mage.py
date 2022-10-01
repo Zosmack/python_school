@@ -38,24 +38,43 @@ class Mage:
                 "Which Attack? (1=Fireball, 2=MagicMissile, 3=MirrorImage, 4=SmallHealing): ")
             if (choise == "1"):
                 if (self.charged == True):
-                    self.fireball()
                     self.charged = False
-                    break
+                    return self.fireball()
                 else:
                     print("Fireball is charged")
                     self.charged = True
-                    break
+                    return 0
             if (choise == "2"):
-                self.magicMissile()
-                break
+                return self.magicMissile()
             if (choise == "3"):
                 self.mirrorImages()
-                break
+                return 0
             if (choise == "4"):
                 if (self.heal == False):
                     self.heal = True
                     self.smallhealing()
-                    break
+                    return 0
                 else:
                     print("Healing allready used")
             print("Wrong Input")
+
+    def printData(self):
+        print("Live: ", self.live)
+        if (self.heal):
+            print("Healpotion already used")
+        else:
+            print("Healpotion is ready")
+        if (self.charged):
+            print("Fireball is ready")
+        else:
+            print("Fireball is not ready")
+        if (self.noDamage != 0):
+            print("Schield for", self.noDamage, "Round/s")
+        else:
+            print("No Schield")
+
+    def getDamage(self, damage):
+        if (self.noDamage == 0):
+            self.live = self.live-damage
+        else:
+            self.noDamage -= 1

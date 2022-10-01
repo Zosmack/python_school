@@ -3,9 +3,9 @@ import player
 
 
 def finish():
-    if (playerOne.player.live == 0):
+    if (playerOne.player.live <= 0):
         return True
-    if (playerTwo.player.live == 0):
+    if (playerTwo.player.live <= 0):
         return True
     return False
 
@@ -24,11 +24,18 @@ if (playerOne.player.initiative > playerTwo.player.initiative):
     play = True
 
 while (finish() == False):
+    print()
+    print("PlayerOne:")
+    playerOne.player.printData()
+    print()
+    print("PlayerTwo:")
+    playerTwo.player.printData()
+    print()
     if (play):
-        playerOne.player.attack()
-        print("one")
+        print("PlayerOne Attack:")
+        playerTwo.player.getDamage(playerOne.player.attack())
         play = False
     else:
-        print("two")
-        play = False
-    break  # noch entfernen
+        print("PlayerTwo Attack:")
+        playerOne.player.getDamage(playerTwo.player.attack())
+        play = True
