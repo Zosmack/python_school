@@ -4,10 +4,10 @@ import player
 
 def finish():
     if (playerOne.player.live <= 0):
-        return True
+        return False
     if (playerTwo.player.live <= 0):
-        return True
-    return False
+        return False
+    return True
 
 
 # Game
@@ -23,7 +23,7 @@ play = False
 if (playerOne.player.initiative > playerTwo.player.initiative):
     play = True
 
-while (finish() == False):
+while (finish()):
     print()
     print("PlayerOne:")
     playerOne.player.printData()
