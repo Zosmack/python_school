@@ -23,7 +23,7 @@ class Mage:
         rand = random.randint(1, 2)
         if (rand == 1):
             self.noDamage = 2
-            print("No Damage for tow rounds")
+            print("No Damage for two rounds")
         else:
             print("Fail")
 
